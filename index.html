@@ -2,14 +2,25 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Popmeapplink by enzozibracodersco</title>
+    <title>Pop Me App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/icon.png">
+    <link rel="shortcut icon" href="images/icon.png"> 
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
+
+  <script>
+    function getParams(param){
+      var paramsString = window.location;
+      var searchParams = new URLSearchParams(paramsString);
+      return searchParams.get(param);
+    }
+  </script>
   <body>
+    
     <section class="page-header">
       <h1 class="project-name">Pop Me App</h1>
       <h2 class="project-tagline">Discover GREAT music out there, and so many NEW songs everyday</h2>
@@ -20,12 +31,16 @@
     <section class="main-content">
       
 
+      <p id="p1">Hello World!</p>
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/enzozibracodersco/popmeapplink">Pop Me App</a> is maintained by <a href="https://github.com/enzozibracodersco">Zibracoders.co</a>.</span>
       </footer>
 
     </section>
 
+    <script>
+      document.getElementById("p1").innerHTML = getParams('id');
+    </script>
   
   </body>
 </html>
