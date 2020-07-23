@@ -25,6 +25,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
+    <style>
+      .page-header {
+        background: linear-gradient(315deg, #fc5296 0%, #f67062 50%, #fc5296);
+      }
+    </style>
   </head>
 
   <script>
@@ -99,11 +104,11 @@
     
 
     <script>
-      document.getElementById("songName").innerHTML = params.songName.replace(/%20/g, " ");
-      document.getElementById("albumName").innerHTML = params.albumName.replace(/%20/g, " ");
-      document.getElementById("artistName").innerHTML = params.artistName.replace(/%20/g, " ");
-      document.getElementById("cover").src = params.url;
-      document.getElementById("audio").src = params.urlPreview;
+      document.getElementById("songName").innerHTML = params.songName.replace(/%2520/g, " ");
+      document.getElementById("albumName").innerHTML = params.albumName.replace(/%2520/g, " ");
+      document.getElementById("artistName").innerHTML = params.artistName.replace(/%2520/g, " ");
+      document.getElementById("cover").src = params.cover;
+      document.getElementById("audio").src = params.preview;
     </script>
   
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
