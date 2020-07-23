@@ -74,7 +74,7 @@
               <img id="cover" class="rounded mx-auto d-block" src="mages/icon.png">
             </div>
             <div class="col-md-8">
-              <h2><span id="artistName" >Right column title </span><span class="badge badge-secondary">New</span></h2>
+              <h2><span id="artistName" >Right column title </span></h2>
               
               <p >
                 <img src="https://img.icons8.com/cotton/24/000000/audio-file.png"/>
@@ -104,9 +104,9 @@
     
 
     <script>
-      document.getElementById("songName").innerHTML = params.songName.replace(/%2520/g, " ");
-      document.getElementById("albumName").innerHTML = params.albumName.replace(/%2520/g, " ");
-      document.getElementById("artistName").innerHTML = params.artistName.replace(/%2520/g, " ");
+      document.getElementById("songName").innerHTML = params.songName.replace(/%2520/g, " ").replace(/%2520/g, " ");
+      document.getElementById("albumName").innerHTML = params.albumName.replace(/%2520/g, " ").replace(/%2520/g, " ");
+      document.getElementById("artistName").innerHTML = params.artistName.replace(/%2520/g, " ").replace(/%26/g, "&");
       document.getElementById("cover").src = params.cover;
       document.getElementById("audio").src = params.preview;
     </script>
