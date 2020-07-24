@@ -15,7 +15,9 @@ body {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: #606c71; }
+  color: #606c71; 
+  background-color: #f7f7f7 !important;
+}
 
 a {
   color: #fc5296 !important;
@@ -220,7 +222,7 @@ a {
 @media screen and (min-width: 64em) {
   .main-content {
     max-width: 64rem;
-    padding: 2rem 6rem;
+    padding: 3rem 6rem;
     margin: 0 auto;
     font-size: 1.1rem; } }
 
