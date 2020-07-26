@@ -6,6 +6,9 @@
             "paths":["NOT /_/*","/*"]
         }]
     },
+    "activitycontinuation": {
+        "apps": ["SQ43MC6VC4.com.popmeapp"]
+    },
     "webcredentials": {
       "apps": [ "SQ43MC6VC4.com.popmeapp" ]
    }

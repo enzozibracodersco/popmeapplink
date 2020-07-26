@@ -249,6 +249,13 @@ a {
   margin-right: 1rem;
   margin-bottom: 1rem;}
 
+.site-footer-ios {
+    display: block;
+    font-weight: bold; 
+    float: left;
+    margin-left: 1rem;
+    margin-bottom: 1rem;}
+
 .site-footer-credits {
   color: #819198; }
 
