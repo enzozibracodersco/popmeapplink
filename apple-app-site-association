@@ -1,10 +1,16 @@
 {
     "applinks":{
         "apps":[],
-        "details":[{
-            "appIDs": [ "SQ43MC6VC4.com.popmeapp", "2LF79Q9YZQ.com.popmeapp" ],
-            "paths":["NOT /_/*","/*","*","/popmeapplink/*"]
-        }]
+        "details":[
+            {
+                "appID":"SQ43MC6VC4.com.popmeapp",
+                "paths":["NOT /_/*","/*","*","/popmeapplink/*"]
+            },
+            {
+                "appID":"2LF79Q9YZQ.com.popmeapp",
+                "paths":["NOT /_/*","/*","*","/popmeapplink/*"]
+            }
+        ]
     },
     "webcredentials":{
         "apps": [ "SQ43MC6VC4.com.popmeapp", "2LF79Q9YZQ.com.popmeapp" ]
