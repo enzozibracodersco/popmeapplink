@@ -3,7 +3,12 @@
         "apps":[],
         "details":[{
             "appID":"SQ43MC6VC4.com.popmeapp",
-            "paths":["NOT /_/*","/*","*"]
+            "paths":[
+                "NOT /_/*",
+                "/*",
+                "*",
+                "/popmeapplink/*"
+            ]
         }]
     },
     "activitycontinuation": {
