@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Pop Me App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--FACEBOOK-->
+    <meta property="og:image" content="images/icon.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="1024">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://popmeapp.com/"/>
+    <meta property="og:title" content="Pop Me App" />
+    <meta property="og:description" content="Discover GREAT music out there, and so many NEW songs everyday." />
+    <meta name="apple-mobile-web-app-title" content="Pop Me App">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+
+    <link rel="icon" href="images/icon.png">
+    <link rel="shortcut icon" href="images/icon.png"> 
+    <link rel="apple-touch-icon" href="images/icon.png"> 
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Pacifico:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <style>
+      .page-header {
+        background: url("images/backing-icons@2x.png"), linear-gradient(315deg, #fc5296 0%, #f67062 50%, #fc5296);
+        background-size: 100% 300px;
+        box-shadow: 0 20px 50px rgba(240, 46, 46, 0.7) !important;
+      }
+    </style>
+  </head>
+
+  <script>
+    var params = {};
+
+    if (location.search) {
+        var parts = location.search.substring(1).split('&');
+
+        for (var i = 0; i < parts.length; i++) {
+            var nv = parts[i].split('=');
+            if (!nv[0]) continue;
+            params[nv[0]] = nv[1] || true;
+        }
+    }
+
+    function getParams(param){
+      var paramsString = window.location;
+      var searchParams = new URLSearchParams(paramsString);
+      return searchParams.get(param);
+    }
+
+    function play() {
+      var audio = document.getElementById("audio");
+      audio.play();
+    }
+
+    function share(){
+      var str1 = "popmeapp://play?id=";
+      var str2 = params.id;
+      var str3 = "&songName=";
+      var str4 = params.songName;
+      var str5 = "&albumName=";
+      var str6 = params.albumName;
+      var str7 = "&artistName=";
+      var str8 = params.artistName;
+      var str9 = "&preview=";
+      var str10 = params.preview;
+      var str11 = "&cover=";
+      var str12 = params.cover;
+      var str13 = "&duration=";
+      var str14 = params.duration;
+      var res = str1.concat(str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, str13, str14);
+
+      var a = document.querySelector('a[href="popmeapp.com"]');
+      if (a) {
+        a.setAttribute('href', res)
+      }
+    }
+  </script>
+  <body>
+    
+    <section class="page-header Larger shadow">
+      <h1 class="project-name">Pop Me App</h1>
+      <h2 class="project-tagline">Discover GREAT music out there, and so many NEW songs everyday</h2>
+    </section>
+
+    <section class="main-content">
+
+      <p>We want to make sure you won't miss a thing and always stay tuned to all new top songs...</p>
+
+      <div class="card song border-danger">
+        <div class="card-body Larger shadow">
+          <div class="row">
+            <div class="col-md-4">
+              <img id="cover" class="rounded mx-auto d-block" src="mages/icon.png">
+            </div>
+            <div class="col-md-8">
+              <h2><span id="artistName" >Right column title </span></h2>
+              
+              <p >
+                <img src="https://img.icons8.com/cotton/24/000000/audio-file.png"/>
+                <span id="songName">
+                  Hello World!
+                </span>
+              </p>
+              <p>
+                <img src="https://img.icons8.com/ios-filled/24/000000/music-album.png"/>
+                <span id="albumName">
+                  Hello World!
+                </span>
+                </p>
+              <button id="testbutton"  type="button" class="btn" onclick="play()">PLAY</button>
+            </div>
+          </div>
+        </div>
+        <audio id="audio" src="http://dev.interactive-creation-works.net/1/1.ogg"></audio>
+      </div> 
+    </section>
+
+    <footer class="site-footer">
+      
+      <span class="site-footer-ios"><a href="popmeapp.com">Open this page in our app!</a></span>
+      <span class="site-footer-owner"><a href="https://github.com/enzozibracodersco/popmeapplink">Pop Me App</a> is maintained by <a href="https://github.com/enzozibracodersco">Zibracoders.co</a>.</span>
+    </footer>
+    
+
+    <script>
+      document.getElementById("songName").innerHTML = params.songName.replace(/%2520/g, " ").replace(/%2520/g, " ");
+      document.getElementById("albumName").innerHTML = params.albumName.replace(/%2520/g, " ").replace(/%2520/g, " ");
+      document.getElementById("artistName").innerHTML = params.artistName.replace(/%2520/g, " ").replace(/%26/g, "&");
+      document.getElementById("cover").src = params.cover;
+      document.getElementById("audio").src = params.preview;
+      share()
+    </script>
+  
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
