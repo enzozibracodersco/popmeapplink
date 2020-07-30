@@ -134,9 +134,10 @@
     
 
     <script>
-      document.getElementById("songName").innerHTML = params.songName.replace(/%2520/g, " ").replace(/%2520/g, " ");
-      document.getElementById("albumName").innerHTML = params.albumName.replace(/%2520/g, " ").replace(/%2520/g, " ");
-      document.getElementById("artistName").innerHTML = params.artistName.replace(/%2520/g, " ").replace(/%26/g, "&");
+
+      document.getElementById("songName").innerHTML = decodeURIComponent(decodeURIComponent(params.songName));
+      document.getElementById("albumName").innerHTML = decodeURIComponent(decodeURIComponent(params.albumName));
+      document.getElementById("artistName").innerHTML = decodeURIComponent(decodeURIComponent(params.artistName));
       document.getElementById("cover").src = params.cover;
       document.getElementById("audio").src = params.preview;
       share()
